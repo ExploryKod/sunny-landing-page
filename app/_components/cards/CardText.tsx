@@ -10,8 +10,6 @@ type CardTextProps = {
 
 export const CardText = ({ title, description, link, classNames }: CardTextProps) => {
 
-
-
   const headingId = `section-${title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -20,12 +18,12 @@ export const CardText = ({ title, description, link, classNames }: CardTextProps
   return (
     <article
       className={cn(
-        "card-text flex flex-col items-center justify-center p-5 md:p-20",
+        "relative card-text flex flex-col items-center justify-center p-5 md:p-20",
         classNames,
       )}
       aria-labelledby={headingId}
     >
-    <div className="flex max-w-[400px] flex-col gap-5 text-center md:text-left">
+    <div className="z-10 flex max-w-[400px] flex-col gap-5 text-center md:text-left">
         <h2 id={headingId} className="heading-text-image">
         {title}
         </h2>
@@ -39,8 +37,6 @@ export const CardText = ({ title, description, link, classNames }: CardTextProps
             </Link>
         </div>
     </div>
-    
-
 </article>
   );
 };

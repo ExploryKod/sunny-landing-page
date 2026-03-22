@@ -193,6 +193,11 @@ header {
 .heading-text-image {
   @apply text-grey-950 text-3xl font-bold font-fraunces;
 }
+
+.heading-two-images-text {
+  @apply text-green-800 text-2xl font-bold font-fraunces;
+}
+
 .heading-testimonials {
   @apply text-grey-600 text-2xl font-bold uppercase font-fraunces text-center;
 }
@@ -207,4 +212,8 @@ header {
 
 .text-body {
   @apply text-grey-600 text-base font-barlow;
+}
+
+.text-two-images-text {
+  @apply text-green-800 text-base font-barlow;
 }

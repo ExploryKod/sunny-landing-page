@@ -6,7 +6,6 @@ type HeaderMobileNavProps = {
   isOpen: boolean;
 };
 
-/** Same pill shell as desktop `HeaderNav` Contact: Fraunces, uppercase, full rounding; yellow fill instead of white */
 const mobileContactPillClassName = cn(
   "group/contact relative isolate inline-flex w-full max-w-[min(100%,20rem)] items-center justify-center",
   "rounded-full px-8 py-5 font-fraunces uppercase text-grey-950",
@@ -24,7 +23,7 @@ const mobileNavTextLinkClassName = cn(
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grey-950 rounded-sm",
 );
 
-/** Upward caret: tip aligned with top-trailing corner of the white panel (end edge in LTR) */
+/** Upward caret: tip aligned with top-trailing corner of the white panel */
 const mobileMenuBubbleTailClassName = cn(
   "pointer-events-none absolute end-0 top-0",
   "h-3 w-6 -translate-y-full bg-white",

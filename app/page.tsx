@@ -2,6 +2,7 @@ import { HeroBannerSection } from "@/app/_components/sections/HeroBannerSection"
 import { TextImageSection } from "@/app/_components/sections/TextImageSection";
 import { TestimonialCardsSection } from "@/app/_components/sections/TestimonialCardsSection";
 import { ImagesSection } from "./_components/sections/ImagesSection";
+import { TwoImagesTextSection } from "@/app/_components/sections/TwoImagesTextSection";
 
 const textImageSections = [
   {
@@ -21,22 +22,22 @@ const textImageSections = [
   }
 ];
 
-const textImageFusionSections = [
+const twoImagesTextSectionsData = [
   {
     title: "Graphic design",
-    description: "Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.",
+    description:
+      "Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.",
     image: { src: "/desktop/cards/image-graphic-design.jpg", alt: "Graphic design", width: 1000, height: 1000 },
-    link: { text: "Learn more", href: "/graphic-design", color: "green" },
-    odd: true,
+    odd: false,
   },
   {
     title: "Photography",
-    description: "Increase your credibility by getting the most stunning, high-quality photos that improve your business image.",
+    description:
+      "Increase your credibility by getting the most stunning, high-quality photos that improve your business image.",
     image: { src: "/desktop/cards/image-photography.jpg", alt: "Photography", width: 1000, height: 1000 },
-    link: { text: "Learn more", href: "/photography", color: "blue" },
     odd: false,
   },
-]
+];
 
 const TestimonialsCardsData = [
   {
@@ -78,6 +79,9 @@ export default function Home() {
         {textImageSections.map((section) => (
           <TextImageSection key={section.title} {...section} />
         ))}
+    
+        <TwoImagesTextSection sections={twoImagesTextSectionsData} />
+        
         <ImagesSection images={images} />
         {TestimonialsCardsData && TestimonialsCardsData.length > 0 ? (
           <TestimonialCardsSection testimonialsCards={TestimonialsCardsData} />

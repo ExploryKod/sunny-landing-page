@@ -23,15 +23,15 @@ export const HeaderMobileContainer = ({
                   type="button"
                   onClick={handleToggle}
                   className="text-white"
-                  aria-label="Menu"
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
                   aria-expanded={isOpen}
                 >
                     <Image
-                      src="/mobile/icons/icon-hamburger.svg"
+                      src={isOpen ? "/mobile/icons/icon-close.svg" : "/mobile/icons/icon-hamburger.svg"}
                       alt=""
-                      width={24}
-                      height={24}
-                      className="size-6"
+                      width={32}
+                      height={32}
+                      className="size-8 text-white"
                       aria-hidden
                     />
                 </button>
