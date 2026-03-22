@@ -89,18 +89,41 @@ header {
   @apply py-6 max-w-[1440px] mx-auto bg-[var(--bg-footer)] flex flex-col items-center justify-between gap-y-8;
 }
 
+/* Footer nav links + social icons: white on hover / keyboard focus */
+.footer-links {
+  @apply text-green-800 transition-colors;
+}
+
+.footer-links:hover,
+.footer-links:focus-visible {
+  @apply text-white;
+}
+
+.footer-links:focus-visible {
+  @apply rounded-sm outline outline-2 outline-offset-4 outline-white;
+}
+
+.social-links {
+  @apply inline-flex rounded-sm transition-[filter] duration-200;
+}
+
+.social-links img {
+  @apply h-auto w-full;
+  transition: filter 0.2s ease;
+}
+
+.social-links:hover img,
+.social-links:focus-visible img {
+  filter: brightness(0) invert(1);
+}
+
+.social-links:focus-visible {
+  @apply outline outline-2 outline-offset-4 outline-white;
+}
 
 /* -------------------------------------------------------------- */
 /* Liens & boutons */
 /* -------------------------------------------------------------- */
-
-.header-links {
-  @apply text-white font-barlow;
-}
-
-.button-links {
-  @apply font-fraunces text-grey-950 uppercase bg-white px-8 py-5 rounded-full hover:opacity-20;
-}
 
 /* « Trait de stabilo » sous les liens de "learn more" gérés avec pseudo-élément ::before */
 .learn-more-links {
@@ -119,24 +142,45 @@ header {
   border-radius: 0.12em;
 }
 
+/* État par défaut : trait type stabilo (couleur atténuée via color-mix) */
 .learn-more-links.learn-more-link--neutral::before {
   background-color: color-mix(in srgb, var(--sunny-grey-950) 12%, transparent);
+}
+.learn-more-links.learn-more-link--neutral:hover::before,
+.learn-more-links.learn-more-link--neutral:focus-visible::before {
+  background-color: var(--sunny-grey-950);
 }
 
 .learn-more-links.learn-more-link--yellow::before {
   background-color: color-mix(in srgb, var(--sunny-yellow-500) 38%, transparent);
 }
+.learn-more-links.learn-more-link--yellow:hover::before,
+.learn-more-links.learn-more-link--yellow:focus-visible::before {
+  background-color: var(--sunny-yellow-500);
+}
 
 .learn-more-links.learn-more-link--red::before {
   background-color: color-mix(in srgb, var(--sunny-red-400) 42%, transparent);
+}
+.learn-more-links.learn-more-link--red:hover::before,
+.learn-more-links.learn-more-link--red:focus-visible::before {
+  background-color: var(--sunny-red-400);
 }
 
 .learn-more-links.learn-more-link--green::before {
   background-color: color-mix(in srgb, var(--sunny-green-800) 35%, transparent);
 }
+.learn-more-links.learn-more-link--green:hover::before,
+.learn-more-links.learn-more-link--green:focus-visible::before {
+  background-color: var(--sunny-green-800);
+}
 
 .learn-more-links.learn-more-link--blue::before {
   background-color: color-mix(in srgb, var(--sunny-blue-800) 35%, transparent);
+}
+.learn-more-links.learn-more-link--blue:hover::before,
+.learn-more-links.learn-more-link--blue:focus-visible::before {
+  background-color: var(--sunny-blue-800);
 }
  
 /* -------------------------------------------------------------- */

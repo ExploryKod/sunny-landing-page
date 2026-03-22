@@ -11,7 +11,9 @@ export const FooterMobileNav = (props: FooterMobileNavProps) => {
             <ul>
             {links.map((link) => (
                 <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} className="footer-links">
+                      {link.label}
+                    </Link>
                 </li>
             ))}
             </ul>

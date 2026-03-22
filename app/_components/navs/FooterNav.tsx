@@ -11,7 +11,12 @@ export const FooterNav = (props: FooterNavProps) => {
       <ul className="flex flex-row items-center justify-center gap-x-4">
         {links.map((link) => (
             <li key={link.href}>
-                <Link href={link.href} className={`footer-links ${link.classNames ? link.classNames : ""}`}>{link.label}</Link>
+                <Link
+                  href={link.href}
+                  className={`footer-links${link.classNames ? ` ${link.classNames}` : ""}`}
+                >
+                  {link.label}
+                </Link>
             </li>
         ))}
       </ul>

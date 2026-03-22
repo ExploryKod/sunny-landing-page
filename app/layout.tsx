@@ -12,7 +12,7 @@ const headerLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact", classNames: "button-links" },
+  { href: "/contact", label: "Contact", pill: true },
 ];
 
 const footerLinks = [
