@@ -82,9 +82,12 @@ export default function Home() {
     
         <TwoImagesTextSection sections={twoImagesTextSectionsData} />
         
-        <ImagesSection images={images} />
+     
         {TestimonialsCardsData && TestimonialsCardsData.length > 0 ? (
           <TestimonialCardsSection testimonialsCards={TestimonialsCardsData} />
+        ) : null}
+        {images.length > 0 ? (
+          <ImagesSection images={images} />
         ) : null}
       </main>
   );
