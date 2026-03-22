@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type HeaderMobileNavProps = {
   links: { href: string; label: string; pill?: boolean }[];
@@ -6,26 +7,38 @@ type HeaderMobileNavProps = {
 };
 
 /** Same pill shell as desktop `HeaderNav` Contact: Fraunces, uppercase, full rounding; yellow fill instead of white */
-const mobileContactPillClassName =
-  "group/contact relative isolate inline-flex w-full max-w-[min(100%,20rem)] items-center justify-center rounded-full px-8 py-5 font-fraunces uppercase text-grey-950 " +
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-500";
+const mobileContactPillClassName = cn(
+  "group/contact relative isolate inline-flex w-full max-w-[min(100%,20rem)] items-center justify-center",
+  "rounded-full px-8 py-5 font-fraunces uppercase text-grey-950",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-500",
+);
 
-const mobileContactPillBgClassName =
-  "absolute inset-0 -z-10 rounded-full bg-yellow-500 transition-opacity group-hover/contact:opacity-80 group-focus-visible/contact:opacity-80";
+const mobileContactPillBgClassName = cn(
+  "absolute inset-0 -z-10 rounded-full bg-yellow-500 transition-opacity",
+  "group-hover/contact:opacity-80 group-focus-visible/contact:opacity-80",
+);
 
-const mobileNavTextLinkClassName =
-  "block py-4 text-center font-barlow text-grey-600 no-underline transition-colors hover:text-grey-950 focus-visible:text-grey-950 " +
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grey-950 rounded-sm";
+const mobileNavTextLinkClassName = cn(
+  "block py-4 text-center font-barlow text-grey-600 no-underline transition-colors",
+  "hover:text-grey-950 focus-visible:text-grey-950",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grey-950 rounded-sm",
+);
 
 /** Upward caret: tip aligned with top-trailing corner of the white panel (end edge in LTR) */
-const mobileMenuBubbleTailClassName =
-  "pointer-events-none absolute end-0 top-0 h-3 w-6 -translate-y-full bg-white [clip-path:polygon(50%_0,0_100%,100%_100%)]";
+const mobileMenuBubbleTailClassName = cn(
+  "pointer-events-none absolute end-0 top-0",
+  "h-3 w-6 -translate-y-full bg-white",
+  "[clip-path:polygon(50%_0,0_100%,100%_100%)]",
+);
 
 export const HeaderMobileNav = (props: HeaderMobileNavProps) => {
   const { links, isOpen } = props;
   return (
     <div
-      className={`md:hidden absolute top-[var(--header-height)] left-0 w-full ${isOpen ? "block" : "hidden"}`}
+      className={cn(
+        "md:hidden absolute top-[var(--header-height)] left-0 w-full",
+        isOpen ? "block" : "hidden",
+      )}
     >
       <div className="relative mx-auto flex max-w-[90%] flex-col items-center justify-center bg-white py-6">
         <span className={mobileMenuBubbleTailClassName} aria-hidden />

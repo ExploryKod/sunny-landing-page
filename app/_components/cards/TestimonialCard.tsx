@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 type TestimonialCardProps = {
   quote: string;
@@ -21,7 +22,7 @@ export const TestimonialCard = ({
 
   return (
     <article
-      className={`flex flex-col items-center justify-center ${classNames ? classNames : ""}`}
+      className={cn("flex flex-col items-center justify-center", classNames)}
       aria-labelledby={nameHeadingId}
     >
       <div className="flex flex-col items-center justify-center rounded-full">

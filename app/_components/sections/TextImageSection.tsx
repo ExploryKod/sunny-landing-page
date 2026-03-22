@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CardText } from "@/app/_components/cards/CardText";
+import { cn } from "@/lib/utils";
 
 type TextImageSectionProps = {
     title: string;
@@ -14,9 +15,11 @@ export const TextImageSection = (props: TextImageSectionProps) => {
     const { title, description, image, link, classNames, odd } = props;
   return (
     <section
-      className={`text-image-section section-container flex flex-col md:flex-row md:items-stretch
-        ${odd ? " md:flex-row-reverse" : ""}
-      ${classNames ? ` ${classNames}` : ""}`}
+      className={cn(
+        "text-image-section section-container flex flex-col md:flex-row md:items-stretch",
+        odd && "md:flex-row-reverse",
+        classNames,
+      )}
     >
       <CardText
         title={title}

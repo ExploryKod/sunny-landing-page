@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 type SocialLinksProps = {
     socialIconsLinks: { 
@@ -19,7 +20,10 @@ export const SocialLinks = (props: SocialLinksProps) => {
       <ul className="flex flex-row items-center justify-center gap-x-4">
         {socialIconsLinks.map((icon) => (
             <li key={icon.href}>
-                <Link href={icon.href} className={`social-links ${icon.classNames ? icon.classNames : "h-6 w-6"}`}>
+                <Link
+                  href={icon.href}
+                  className={cn("social-links", icon.classNames ?? "h-6 w-6")}
+                >
                     <Image src={icon.src} alt={icon.alt} width={icon.width} height={icon.height} className="w-full" />
                 </Link>
             </li>

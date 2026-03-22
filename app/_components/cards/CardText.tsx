@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type CardTextProps = {
   title: string;
@@ -17,8 +18,13 @@ export const CardText = ({ title, description, link, classNames }: CardTextProps
     .replace(/^-|-$/g, "")}`;
 
   return (
-    <article className={`card-text flex flex-col items-center justify-center p-5 md:p-20 ${classNames ? classNames : ""}`} 
-    aria-labelledby={headingId}>
+    <article
+      className={cn(
+        "card-text flex flex-col items-center justify-center p-5 md:p-20",
+        classNames,
+      )}
+      aria-labelledby={headingId}
+    >
     <div className="flex flex-col gap-5 max-w-[400px]">
         <h2 id={headingId} className="heading-text-image">
         {title}
