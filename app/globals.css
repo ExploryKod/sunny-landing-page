@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary (style-guide) */
+  --sunny-red-400: hsl(7 99% 70%);
+  --sunny-yellow-500: hsl(51 100% 49%);
+  --sunny-green-800: #25564b;
+  --sunny-blue-800: hsl(198 62% 26%);
+  --sunny-green-500: hsl(167 34% 41%);
+
+  /* Neutral */
+  --sunny-grey-950: hsl(212 27% 19%);
+  --sunny-grey-600: hsl(213 9% 39%);
+  --sunny-grey-550: hsl(232 10% 55%);
+  --sunny-grey-400: hsl(210 4% 67%);
+  --sunny-white: hsl(0 100% 100%);
+
+  /* Page defaults */
+  --background: var(--sunny-white);
+  --foreground: var(--sunny-grey-950);
+
+  /* Body copy */
+  --font-size-body: 1.125rem;
+
+  --header-height: 100px;
+
+
 }
 
 @theme inline {
+  /* Colors → utilities: bg-red-400, text-grey-950, etc. */
+  --color-red-400: var(--sunny-red-400);
+  --color-yellow-500: var(--sunny-yellow-500);
+  --color-green-800: var(--sunny-green-800);
+  --color-blue-800: var(--sunny-blue-800);
+  --color-green-500: var(--sunny-green-500);
+  --color-grey-950: var(--sunny-grey-950);
+  --color-grey-600: var(--sunny-grey-600);
+  --color-grey-550: var(--sunny-grey-550);
+  --color-grey-400: var(--sunny-grey-400);
+  --color-white: var(--sunny-white);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Typography (next/font sets --font-barlow / --font-fraunces on <html>) */
+  --font-barlow: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-fraunces: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --text-body: var(--font-size-body);
+
+  --header-height: var(--header-height);
+  --bg-footer: var(--sunny-green-500);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* -------------------------------------------------------------- */
+/* Base */
+/* -------------------------------------------------------------- */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-barlow);
+  font-size: var(--font-size-body);
+}
+
+/* Header - il déborde volontairement sur la première section en dessous pour créer un effet de superposition */
+header {
+  @apply h-[var(--header-height)] -mb-[var(--header-height)] z-50;
+}
+
+/* -------------------------------------------------------------- */
+/* Containers */
+/* -------------------------------------------------------------- */
+
+.hero-container {
+  @apply max-w-[1440px] relative min-h-[min(100vh,50rem)] mx-auto w-full;
+}
+
+.section-container {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.header-container {
+  @apply max-w-[1440px] mx-auto px-10 py-8 flex flex-col md:flex-row md:items-center md:justify-between;
+}
+
+.footer-container {
+  @apply py-6 max-w-[1440px] mx-auto bg-[var(--bg-footer)] flex flex-col items-center justify-between gap-y-8;
+}
+
+
+/* -------------------------------------------------------------- */
+/* Liens & boutons */
+/* -------------------------------------------------------------- */
+
+.header-links {
+  @apply text-white font-barlow;
+}
+
+.button-links {
+  @apply font-fraunces text-grey-950 uppercase bg-white px-8 py-5 rounded-full hover:opacity-20;
+}
+
+/* « Trait de stabilo » sous les liens de "learn more" gérés avec pseudo-élément ::before */
+.learn-more-links {
+  @apply relative inline-block font-fraunces text-2xl font-bold uppercase text-grey-950 no-underline;
+  isolation: isolate;
+}
+
+.learn-more-links::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.18em;
+  right: -0.18em;
+  bottom: 0.06em;
+  height: 0.48em;
+  border-radius: 0.12em;
+}
+
+.learn-more-links.learn-more-link--neutral::before {
+  background-color: color-mix(in srgb, var(--sunny-grey-950) 12%, transparent);
+}
+
+.learn-more-links.learn-more-link--yellow::before {
+  background-color: color-mix(in srgb, var(--sunny-yellow-500) 38%, transparent);
+}
+
+.learn-more-links.learn-more-link--red::before {
+  background-color: color-mix(in srgb, var(--sunny-red-400) 42%, transparent);
+}
+
+.learn-more-links.learn-more-link--green::before {
+  background-color: color-mix(in srgb, var(--sunny-green-800) 35%, transparent);
+}
+
+.learn-more-links.learn-more-link--blue::before {
+  background-color: color-mix(in srgb, var(--sunny-blue-800) 35%, transparent);
+}
+ 
+/* -------------------------------------------------------------- */
+/* Titres */
+/* -------------------------------------------------------------- */
+
+.hero-heading {
+  @apply text-white text-5xl font-bold uppercase font-fraunces;
+}
+.heading-text-image {
+  @apply text-grey-950 text-3xl font-bold font-fraunces;
+}
+.heading-testimonials {
+  @apply text-grey-600 text-2xl font-bold uppercase font-fraunces text-center;
+}
+
+/* -------------------------------------------------------------- */
+/* Textes */
+/* -------------------------------------------------------------- */
+
+.text-heading-testimonials {
+  @apply text-grey-950 text-2xl font-bold font-fraunces;
+}
+
+.text-body {
+  @apply text-grey-600 text-base font-barlow;
 }

@@ -1,65 +1,87 @@
-import Image from "next/image";
+import { HeroBannerSection } from "@/app/_components/sections/HeroBannerSection";
+import { TextImageSection } from "@/app/_components/sections/TextImageSection";
+import { TestimonialCardsSection } from "@/app/_components/sections/TestimonialCardsSection";
+import { ImagesSection } from "./_components/sections/ImagesSection";
+
+const textImageSections = [
+  {
+    title: "Transform your brand",
+    description:
+      "We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.",
+    image: { src: "/desktop/cards/image-transform.jpg", alt: "Transform your brand", width: 1000, height: 1000 },
+    link: { text: "Learn more", href: "/transform", color: "yellow" },
+    odd: false,
+  },
+  {
+    title: "Stand out to the right audience",
+    description: "Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.",
+    image: { src: "/desktop/cards/image-stand-out.jpg", alt: "Stand out to the right audience", width: 1000, height: 1000 },
+    link: { text: "Learn more", href: "/stand-out", color: "red" },
+    odd: true,
+  }
+];
+
+const textImageFusionSections = [
+  {
+    title: "Graphic design",
+    description: "Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.",
+    image: { src: "/desktop/cards/image-graphic-design.jpg", alt: "Graphic design", width: 1000, height: 1000 },
+    link: { text: "Learn more", href: "/graphic-design", color: "green" },
+    odd: true,
+  },
+  {
+    title: "Photography",
+    description: "Increase your credibility by getting the most stunning, high-quality photos that improve your business image.",
+    image: { src: "/desktop/cards/image-photography.jpg", alt: "Photography", width: 1000, height: 1000 },
+    link: { text: "Learn more", href: "/photography", color: "blue" },
+    odd: false,
+  },
+]
+
+const TestimonialsCardsData = [
+  {
+    quote:
+      "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+    name: "Emily R.",
+    role: "Marketing Director",
+    image: { src: "/team/image-emily.jpg", alt: "Emily R.", width: 1000, height: 1000 },
+  },
+  {
+    quote:
+      "Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.",
+    name: "Thomas S.",
+    role: "Chief Operating Officer",
+    image: { src: "/team/image-thomas.jpg", alt: "Thomas S.", width: 1000, height: 1000 },
+  },
+  {
+    quote:
+      "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+    name: "Jennie F.",
+    role: "Business Owner",
+    image: { src: "/team/image-jennie.jpg", alt: "Jennie F.", width: 1000, height: 1000 },
+    classNames: "md:col-span-2 lg:col-span-1",
+  },
+];
+
+const images = [
+  { src: "/desktop/cards/image-gallery-milkbottles.jpg", alt: "Milk bottles", width: 1000, height: 1000 },
+  { src: "/desktop/cards/image-gallery-orange.jpg", alt: "Orange", width: 1000, height: 1000 },
+  { src: "/desktop/cards/image-gallery-cone.jpg", alt: "Cone", width: 1000, height: 1000 },
+  { src: "/desktop/cards/image-gallery-sugarcubes.jpg", alt: "Sugar cubes", width: 1000, height: 1000 },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+ 
+      <main className="main-container" id="main">
+        <HeroBannerSection title="We are creatives" image={{ src: "/desktop/image-header.jpg", alt: "Hero banner", width: 1000, height: 1000 }} />
+        {textImageSections.map((section) => (
+          <TextImageSection key={section.title} {...section} />
+        ))}
+        <ImagesSection images={images} />
+        {TestimonialsCardsData && TestimonialsCardsData.length > 0 ? (
+          <TestimonialCardsSection testimonialsCards={TestimonialsCardsData} />
+        ) : null}
       </main>
-    </div>
   );
 }
