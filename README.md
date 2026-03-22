@@ -32,14 +32,18 @@ Users should be able to:
 
 The page includes a full-viewport hero (“We are creatives”), alternating text/image sections (including Graphic design & Photography), a four-image gallery, client testimonials with quotes, and a footer with navigation and social links—aligned with the Frontend Mentor content order and `style-guide.md` where applicable.
 
-### Screenshot
+For now my work is still in progress.
+
+### Screenshot 
+
+Below a partial screenshot of the first section and the header
 
 ![](./screenshot.png)
 
 ### Links
 
-- Solution URL: _[submit on Frontend Mentor, then paste your solution page here]_
-- Live site URL: _[your deployed URL, e.g. Vercel / Netlify]_
+- Solution URL: _[Will be paste here once I submit on Frontend Mentor]_
+- Live site URL: _[https://sunny-landing-page-seven.vercel.app/]_
 
 ---
 
