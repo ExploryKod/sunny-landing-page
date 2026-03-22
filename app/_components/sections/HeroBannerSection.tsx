@@ -19,7 +19,7 @@ export const HeroBannerSection = (props: HeroBannerSectionProps) => {
                   priority
                   loading="eager"
                   sizes="100vw"
-                  className="h-full w-full object-cover opacity-50"
+                  className="h-full w-full object-cover"
                 />
             </div>
             <div className="relative z-10 flex min-h-[min(100vh,50rem)] w-full flex-col items-center gap-8 px-4">
