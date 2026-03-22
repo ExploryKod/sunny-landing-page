@@ -9,7 +9,7 @@ export const HeroBannerSection = (props: HeroBannerSectionProps) => {
     const { title, image } = props;
   return (
     <section className="hero-container">
-        <div className="relative w-full">
+        <div className="pt-30 relative w-full">
             <div className="absolute inset-0 z-0">
                 <Image
                   src={image.src}
