@@ -4,9 +4,10 @@ import "./globals.css";
 import { Header } from "@/app/_components/layouts/Header";
 import { Footer } from "@/app/_components/layouts/Footer";
 import { HeaderNav } from "@/app/_components/navs/HeaderNav";
-import { FooterNav } from "@/app/_components/navs/FooterNav";
+import { HeaderMobileContainer } from "@/app/_components/navs/HeaderMobileContainer";
 import { BrandBtn } from "@/app/_components/buttons/BrandBtn";
 import { SocialLinks } from "@/app/_components/navs/SocialLinks";
+import { FooterNav } from "@/app/_components/navs/FooterNav";
 
 const headerLinks = [
   { href: "/about", label: "About" },
@@ -79,6 +80,7 @@ export default function RootLayout({
             <BrandBtn src="/logo.svg" alt="Sunnyside" href="/" width={124} height={24} />
           </div>
           <HeaderNav links={headerLinks} />
+          <HeaderMobileContainer links={headerLinks} />
         </Header>
         {children}
         <Footer>

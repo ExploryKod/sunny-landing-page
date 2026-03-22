@@ -15,7 +15,7 @@ const headerTextLinkClassName =
 export const HeaderNav = (props: HeaderNavProps) => {
   const { links } = props;
   return (
-    <nav aria-label="Main navigation" className="header-nav">
+    <nav aria-label="Main navigation" className="header-nav hidden md:block">
       <ul className="inline-flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-2">
         {links.map((link) => (
           <li key={link.href}>

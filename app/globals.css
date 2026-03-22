@@ -82,7 +82,7 @@ header {
 }
 
 .header-container {
-  @apply max-w-[1440px] mx-auto px-10 py-8 flex flex-col md:flex-row md:items-center md:justify-between;
+  @apply max-w-[1440px] mx-auto px-10 py-8 flex flex-row items-center justify-between;
 }
 
 .footer-container {
@@ -188,7 +188,7 @@ header {
 /* -------------------------------------------------------------- */
 
 .hero-heading {
-  @apply text-white text-5xl font-bold uppercase font-fraunces;
+  @apply text-white text-center text-5xl font-bold uppercase font-fraunces;
 }
 .heading-text-image {
   @apply text-grey-950 text-3xl font-bold font-fraunces;
