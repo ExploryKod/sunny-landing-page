@@ -24,6 +24,8 @@
 
   --header-height: 100px;
 
+  --footer-background: var(--sunny-green-500);
+
 
 }
 
@@ -50,7 +52,8 @@
   --text-body: var(--font-size-body);
 
   --header-height: var(--header-height);
-  --bg-footer: var(--sunny-green-500);
+  --bg-footer: var(--footer-background);
+  --color-photo: var(--sunny-blue-800);
 }
 
 /* -------------------------------------------------------------- */
@@ -195,7 +198,7 @@ header {
 }
 
 .heading-two-images-text {
-  @apply text-green-800 text-2xl font-bold font-fraunces;
+  @apply text-2xl font-bold font-fraunces;
 }
 
 .heading-testimonials {
@@ -215,3 +218,9 @@ header {
 }
 
 .text-two-images-text {
+  @apply text-base font-barlow;
+}
+
+.photography-text-color {
+  @apply text-[var(--color-photo)];
+}

@@ -14,10 +14,14 @@ export const CardImageText = ({
   classNames,
   imageCard,
 }: CardImageTextProps) => {
+
+
   const headingId = `section-${title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")}`;
+
+const textColorClass = imageCard?.src.includes("photography") ? "photography-text-color" : "text-green-800";
 
   return (
     <div
@@ -46,10 +50,10 @@ export const CardImageText = ({
 
         <div className="absolute bottom-5 left-0 right-0 z-10 px-4 pb-5 pt-6 text-center">
           <div className="flex flex-col items-center justify-center max-w-[400px] mx-auto">
-            <h2 id={headingId} className="heading-two-images-text">
+            <h2 id={headingId} className={`heading-two-images-text ${textColorClass}`}>
               {title}
             </h2>
-            <p className="text-two-images-text mt-2">{description}</p>
+            <p className={`text-two-images-text ${textColorClass} mt-2`}>{description}</p>
           </div>
         </div>
         
