@@ -19,8 +19,7 @@ const headerLinks = [
 const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/projects", label: "Projects" }
 ];
 
 const socialIconsLinks = [

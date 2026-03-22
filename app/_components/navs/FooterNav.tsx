@@ -8,8 +8,8 @@ type FooterNavProps = {
 export const FooterNav = (props: FooterNavProps) => {
     const { links } = props;
   return (
-    <nav aria-label="Footer navigation" className="hidden md:block">
-      <ul className="flex flex-row items-center justify-center gap-x-4">
+    <nav aria-label="Footer navigation">
+      <ul className="flex flex-row flex-wrap items-center justify-center gap-x-4 gap-y-2">
         {links.map((link) => (
             <li key={link.href}>
                 <Link

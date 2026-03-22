@@ -16,7 +16,7 @@ export const TextImageSection = (props: TextImageSectionProps) => {
   return (
     <section
       className={cn(
-        "text-image-section section-container flex flex-col md:flex-row md:items-stretch",
+        "text-image-section section-container flex min-h-[clamp(30rem,65svh,48rem)] flex-col md:min-h-0 md:flex-row md:items-stretch",
         odd && "md:flex-row-reverse",
         classNames,
       )}
@@ -25,15 +25,17 @@ export const TextImageSection = (props: TextImageSectionProps) => {
         title={title}
         description={description}
         link={link}
-        classNames="w-full min-w-0 md:w-1/2"
+        classNames={cn(
+          "w-full min-w-0 min-h-0 flex-1 basis-0 md:basis-auto md:flex-none md:w-1/2",
+        )}
       />
-      <div className="relative w-full min-w-0 md:w-1/2">
+      <div className="relative flex min-h-0 w-full min-w-0 flex-1 basis-0 md:flex-none md:w-1/2">
         <Image
           src={image.src}
           alt={image.alt}
           width={image.width}
           height={image.height}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           sizes="(min-width: 768px) 50vw, 100vw"
         />
       </div>

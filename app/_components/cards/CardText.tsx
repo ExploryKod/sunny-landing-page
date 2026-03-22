@@ -25,12 +25,12 @@ export const CardText = ({ title, description, link, classNames }: CardTextProps
       )}
       aria-labelledby={headingId}
     >
-    <div className="flex flex-col gap-5 max-w-[400px]">
+    <div className="flex max-w-[400px] flex-col gap-5 text-center md:text-left">
         <h2 id={headingId} className="heading-text-image">
         {title}
         </h2>
         <p className="text-body">{description}</p>
-        <div className="flex flex-row items-center justify-start">
+        <div className="flex flex-row items-center justify-center md:justify-start">
             <Link
               href={link.href}
               className={`learn-more-links learn-more-link--${link.color ?? "neutral"}`}

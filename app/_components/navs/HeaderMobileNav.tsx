@@ -35,10 +35,16 @@ export const HeaderMobileNav = (props: HeaderMobileNavProps) => {
   const { links, isOpen } = props;
   return (
     <div
+      aria-hidden={!isOpen ? true : undefined}
       className={cn(
-        "md:hidden absolute top-[var(--header-height)] left-0 w-full",
-        isOpen ? "block" : "hidden",
+        "md:hidden absolute top-[var(--header-height)] left-0 w-full z-50",
+        "origin-top transition-[opacity,transform] duration-300 ease-out",
+        "motion-reduce:transition-none",
+        isOpen
+          ? "pointer-events-auto opacity-100 translate-y-0"
+          : "pointer-events-none opacity-0 -translate-y-2",
       )}
+      inert={!isOpen}
     >
       <div className="relative mx-auto flex max-w-[90%] flex-col items-center justify-center bg-white py-6">
         <span className={mobileMenuBubbleTailClassName} aria-hidden />
